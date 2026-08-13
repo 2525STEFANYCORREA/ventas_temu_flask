@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Clientes | Ventas Temu{% endblock %}
+{% block content %}
+<section class="inner-hero">
+    <div class="container">
+        <span class="eyebrow light">MÓDULO</span>
+        <h1 class="display-6 fw-bold">Clientes</h1>
+        <p class="lead mb-0">Listado de clientes de ejemplo.</p>
+    </div>
+</section>
+<section class="section-space">
+    <div class="container">
+        <div class="table-card">
+            <div class="table-responsive">
+                <table class="table align-middle mb-0">
+                    <thead><tr><th>#</th><th>Nombre</th><th>Teléfono</th><th>Correo</th></tr></thead>
+                    <tbody>
+                    {% for cliente in clientes %}
+                    <tr><td>{{ loop.index }}</td><td>{{ cliente.nombre }}</td><td>{{ cliente.telefono }}</td><td>{{ cliente.correo }}</td></tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
