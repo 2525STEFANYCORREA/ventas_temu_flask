@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg navbar-dark app-navbar sticky-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="{{ url_for('index') }}">
+            <span class="brand-icon">T</span> {{ nombre_sistema }}
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link {% if request.endpoint == 'index' %}active{% endif %}" href="{{ url_for('index') }}">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if request.endpoint == 'productos_view' %}active{% endif %}" href="{{ url_for('productos_view') }}">Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if request.endpoint == 'clientes_view' %}active{% endif %}" href="{{ url_for('clientes_view') }}">Clientes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if request.endpoint == 'proveedores_view' %}active{% endif %}" href="{{ url_for('proveedores_view') }}">Proveedores</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if request.endpoint == 'facturacion_view' %}active{% endif %}" href="{{ url_for('facturacion_view') }}">Facturación</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
