@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Clientes | Ventas Temu{% endblock %}
+{% block content %}
+<section class="inner-hero"><div class="container"><span class="eyebrow light">SEMANA 15 · POSTGRESQL</span><h1 class="display-6 fw-bold">Clientes</h1><p class="lead mb-0">CRUD conectado a PostgreSQL.</p></div></section>
+<section class="section-space"><div class="container">
+<div class="records-header mb-4"><div><span class="eyebrow">CLIENTES</span><h2 class="fw-bold mb-0">Registros almacenados</h2></div><a href="{{ url_for('formulario_cliente') }}" class="btn btn-temu rounded-pill px-4">+ Nuevo cliente</a></div>
+<div class="table-card"><div class="table-responsive"><table class="table align-middle mb-0"><thead><tr><th>ID</th><th>Nombre</th><th>Teléfono</th><th>Correo</th><th>Estado</th><th>Acciones</th></tr></thead><tbody>
+{% for cliente in clientes %}<tr><td>{{ cliente.id_cliente }}</td><td><strong>{{ cliente.nombre }}</strong></td><td>{{ cliente.telefono }}</td><td>{{ cliente.correo }}</td><td><span class="badge text-bg-success">{{ cliente.estado }}</span></td><td><a href="{{ url_for('editar_cliente', cliente_id=cliente.id_cliente) }}" class="btn btn-outline-secondary btn-sm rounded-pill">Editar</a>
+<form method="POST" action="{{ url_for('eliminar_cliente', cliente_id=cliente.id_cliente) }}" class="d-inline" onsubmit="return confirmarEliminacion('{{ cliente.nombre|e }}');">{{ delete_form.hidden_tag() }}{{ delete_form.submit(class="btn btn-outline-danger btn-sm rounded-pill") }}</form></td></tr>
+{% else %}<tr><td colspan="6" class="text-center py-4">No existen clientes registrados.</td></tr>{% endfor %}</tbody></table></div></div>
+</div></section>{% endblock %}

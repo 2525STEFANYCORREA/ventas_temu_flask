@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %}{{ modo }} proveedor | Ventas Temu{% endblock %}
+
+{% block content %}
+<section class="inner-hero">
+    <div class="container">
+        <span class="eyebrow light">FLASK-WTF · PROVEEDORES</span>
+        <h1 class="display-6 fw-bold">{{ modo }} proveedor</h1>
+        <p class="lead mb-0">Formulario reutilizable para registro y edición.</p>
+    </div>
+</section>
+
+<section class="section-space">
+    <div class="container">
+        <div class="form-card mx-auto form-width">
+            <div class="mb-4">
+                <span class="eyebrow">FORMULARIO</span>
+                <h2 class="fw-bold mt-2">{{ modo }} proveedor</h2>
+                <p class="text-muted">Completa los campos obligatorios para continuar.</p>
+            </div>
+
+            <form method="POST" novalidate>
+                {{ form.hidden_tag() }}
+
+                <div class="row g-3">
+                    <div class="col-12">
+                        {{ form.nombre.label(class="form-label fw-semibold") }}
+                        {{ form.nombre(class="form-control", placeholder="Ej.: Temu Marketplace") }}
+                        {% for error in form.nombre.errors %}
+                        <div class="invalid-feedback d-block">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+
+                    <div class="col-12">
+                        {{ form.contacto.label(class="form-label fw-semibold") }}
+                        {{ form.contacto(class="form-control", placeholder="Ej.: Atención en línea") }}
+                        {% for error in form.contacto.errors %}
+                        <div class="invalid-feedback d-block">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+
+                    <div class="col-md-6">
+                        {{ form.estado.label(class="form-label fw-semibold") }}
+                        {{ form.estado(class="form-select") }}
+                        {% for error in form.estado.errors %}
+                        <div class="invalid-feedback d-block">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+
+                    <div class="col-12 d-flex gap-2 flex-wrap pt-2">
+                        {{ form.submit(class="btn btn-temu rounded-pill px-4") }}
+                        <a href="{{ url_for('proveedores_view') }}" class="btn btn-outline-secondary rounded-pill px-4">Cancelar</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

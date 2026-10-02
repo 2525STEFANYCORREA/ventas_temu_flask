@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block title %}{{ modo }} factura | Ventas Temu{% endblock %}
+
+{% block content %}
+<section class="inner-hero">
+    <div class="container">
+        <span class="eyebrow light">FLASK-WTF · FACTURACIÓN</span>
+        <h1 class="display-6 fw-bold">{{ modo }} factura</h1>
+        <p class="lead mb-0">Formulario con selección de cliente y validación del total.</p>
+    </div>
+</section>
+
+<section class="section-space">
+    <div class="container">
+        <div class="form-card mx-auto form-width">
+            <div class="mb-4">
+                <span class="eyebrow">FORMULARIO</span>
+                <h2 class="fw-bold mt-2">{{ modo }} factura</h2>
+                <p class="text-muted">El cliente se carga desde la tabla de clientes en PostgreSQL.</p>
+            </div>
+
+            <form method="POST" novalidate>
+                {{ form.hidden_tag() }}
+
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        {{ form.numero.label(class="form-label fw-semibold") }}
+                        {{ form.numero(class="form-control", placeholder="Ej.: F-004") }}
+                        {% for error in form.numero.errors %}
+                        <div class="invalid-feedback d-block">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+
+                    <div class="col-md-6">
+                        {{ form.cliente.label(class="form-label fw-semibold") }}
+                        {{ form.cliente(class="form-select") }}
+                        {% for error in form.cliente.errors %}
+                        <div class="invalid-feedback d-block">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+
+                    <div class="col-md-6">
+                        {{ form.total.label(class="form-label fw-semibold") }}
+                        {{ form.total(class="form-control", type="number", step="0.01", min="0.01", placeholder="0.00") }}
+                        {% for error in form.total.errors %}
+                        <div class="invalid-feedback d-block">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+
+                    <div class="col-md-6">
+                        {{ form.estado.label(class="form-label fw-semibold") }}
+                        {{ form.estado(class="form-select") }}
+                        {% for error in form.estado.errors %}
+                        <div class="invalid-feedback d-block">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+
+                    <div class="col-12 d-flex gap-2 flex-wrap pt-2">
+                        {{ form.submit(class="btn btn-temu rounded-pill px-4") }}
+                        <a href="{{ url_for('facturacion_view') }}" class="btn btn-outline-secondary rounded-pill px-4">Cancelar</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

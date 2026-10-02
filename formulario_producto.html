@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block title %}{{ modo }} producto | Ventas Temu{% endblock %}
+{% block content %}
+<section class="inner-hero">
+    <div class="container">
+        <span class="eyebrow light">SEMANA 15 · POSTGRESQL</span>
+        <h1 class="display-6 fw-bold">{{ modo }} producto</h1>
+        <p class="lead mb-0">Formulario Flask-WTF con validación y persistencia relacional.</p>
+    </div>
+</section>
+
+<section class="section-space">
+    <div class="container form-width">
+        <div class="form-card">
+            <div class="d-flex align-items-center gap-3 mb-4">
+                <span class="icon-circle">📦</span>
+                <div>
+                    <span class="eyebrow">PRODUCTOS</span>
+                    <h2 class="fw-bold mb-0">{{ modo }} información</h2>
+                </div>
+            </div>
+
+            <form method="POST" novalidate>
+                {{ form.hidden_tag() }}
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        {{ form.nombre.label(class="form-label fw-semibold") }}
+                        {{ form.nombre(class="form-control", placeholder="Ej.: Audífonos Bluetooth") }}
+                        {% for error in form.nombre.errors %}<div class="invalid-feedback d-block">{{ error }}</div>{% endfor %}
+                    </div>
+
+                    <div class="col-md-6">
+                        {{ form.categoria.label(class="form-label fw-semibold") }}
+                        {{ form.categoria(class="form-select") }}
+                        {% for error in form.categoria.errors %}<div class="invalid-feedback d-block">{{ error }}</div>{% endfor %}
+                    </div>
+
+                    <div class="col-md-4">
+                        {{ form.precio.label(class="form-label fw-semibold") }}
+                        {{ form.precio(class="form-control", type="number", step="0.01", min="0.01", placeholder="0.00") }}
+                        {% for error in form.precio.errors %}<div class="invalid-feedback d-block">{{ error }}</div>{% endfor %}
+                    </div>
+
+                    <div class="col-md-4">
+                        {{ form.stock.label(class="form-label fw-semibold") }}
+                        {{ form.stock(class="form-control", type="number", min="0", placeholder="0") }}
+                        {% for error in form.stock.errors %}<div class="invalid-feedback d-block">{{ error }}</div>{% endfor %}
+                    </div>
+
+                    <div class="col-md-4">
+                        {{ form.proveedor.label(class="form-label fw-semibold") }}
+                        {{ form.proveedor(class="form-select") }}
+                        {% for error in form.proveedor.errors %}<div class="invalid-feedback d-block">{{ error }}</div>{% endfor %}
+                    </div>
+
+                    <div class="col-12">
+                        {{ form.emoji.label(class="form-label fw-semibold") }}
+                        {{ form.emoji(class="form-control", placeholder="Ej.: 🎧") }}
+                        {% for error in form.emoji.errors %}<div class="invalid-feedback d-block">{{ error }}</div>{% endfor %}
+                    </div>
+
+                    <div class="col-12 d-flex gap-2 flex-wrap pt-2">
+                        {{ form.submit(class="btn btn-temu rounded-pill px-4") }}
+                        <a href="{{ url_for('productos_view') }}" class="btn btn-outline-secondary rounded-pill px-4">Cancelar</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}
