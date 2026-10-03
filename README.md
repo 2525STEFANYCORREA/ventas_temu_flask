@@ -1,93 +1,84 @@
 # Ventas Temu
 
-Aplicación web desarrollada con Flask y PostgreSQL para la gestión de productos, clientes, proveedores y facturación.
+Aplicación web para gestionar pedidos y ventas de productos adquiridos mediante Temu.
 
 ## Tecnologías
 
+- HTML5
+- CSS3
+- Bootstrap 5
+- JavaScript
+- Python
 - Flask
+- Jinja2
 - Flask-WTF y WTForms
 - Flask-Login
 - PostgreSQL
-- Jinja2
-- Bootstrap 5
-- HTML5, CSS3 y JavaScript
 
 ## Funcionalidades
 
+- Página informativa responsive.
+- Navegación por Inicio, Quiénes Somos, Productos y Contacto.
+- Formulario dinámico con JavaScript.
+- Validaciones en tiempo real y al enviar.
+- Creación, visualización, conteo y eliminación de registros dinámicos.
+- Plantillas Flask con herencia y componentes reutilizables.
+- Formularios Flask-WTF con validaciones y protección CSRF.
 - Registro e inicio de sesión de usuarios.
-- Autenticación y cierre de sesión.
-- Rutas protegidas mediante autenticación.
-- CRUD completo de productos.
-- CRUD completo de clientes.
-- CRUD completo de proveedores.
-- CRUD completo de facturación.
-- Formularios validados con Flask-WTF y protección CSRF.
-- Cinco tablas relacionadas mediante claves primarias y foráneas.
-- Consultas SQL parametrizadas.
-- Consultas JOIN para mostrar relaciones entre registros.
-- Navegación funcional e interfaz responsive.
+- Contraseñas almacenadas mediante hash.
+- Sesiones con Flask-Login.
+- Rutas administrativas protegidas.
+- CRUD de productos, clientes, proveedores y facturación.
+- PostgreSQL con claves primarias y foráneas.
+- Consultas SELECT, INSERT, UPDATE y DELETE parametrizadas.
+- Consultas JOIN para mostrar información relacionada.
+- Interfaz responsive con Bootstrap.
+- Configuración para despliegue con Gunicorn y Render.
 
 ## Estructura
 
-```
-ventas_temu_flask/
-├── app.py
-├── models.py
-├── requirements.txt
-├── .env.example
-├── .gitignore
-├── Procfile
-├── render.yaml
-├── conexion/
-│   ├── __init__.py
-│   └── conexion.py
-├── forms/
-│   ├── __init__.py
-│   ├── login_form.py
-│   ├── usuario_form.py
-│   ├── producto_form.py
-│   ├── cliente_form.py
-│   ├── proveedor_form.py
-│   └── facturacion_form.py
-├── sql/
-│   └── esquema.sql
-├── templates/
-│   ├── base.html
-│   ├── index.html
-│   ├── login.html
-│   ├── registro.html
-│   ├── dashboard.html
-│   ├── productos.html
-│   ├── formulario_producto.html
-│   ├── clientes.html
-│   ├── formulario_cliente.html
-│   ├── proveedores.html
-│   ├── formulario_proveedor.html
-│   ├── facturacion.html
-│   ├── formulario_facturacion.html
-│   └── components/
-│       ├── navbar.html
-│       └── footer.html
-└── static/
-    ├── css/
-    │   └── style.css
-    ├── js/
-    │   └── script.js
-    └── img/
-        └── logo.svg
-```
+- index.html
+- app.py
+- models.py
+- requirements.txt
+- .env.example
+- .gitignore
+- Procfile
+- render.yaml
+- conexion/
+- forms/
+- sql/esquema.sql
+- templates/
+- templates/components/
+- static/css/
+- static/js/
+- static/img/
 
 ## Base de datos
 
-Las tablas principales son:
-
-- `usuarios`
-- `proveedores`
-- `productos`
-- `clientes`
-- `facturas`
+Tablas principales: usuarios, proveedores, productos, clientes y facturas.
 
 Relaciones:
+- proveedores → productos
+- clientes → facturas
 
-- Proveedores 1:N Productos.
-- Clientes 1:N Facturas.
+## Configuración
+
+PostgreSQL local:
+
+DB_HOST=localhost
+DB_PORT=5432
+DB_USER=postgres
+DB_PASSWORD=TU_PASSWORD
+DB_NAME=ventas_temu
+SECRET_KEY=TU_CLAVE_SEGURA
+
+Para PostgreSQL administrado también puede utilizarse DATABASE_URL.
+Las credenciales reales deben permanecer fuera del repositorio.
+
+## Ejecución
+
+pip install -r requirements.txt
+python app.py
+
+La aplicación utiliza el puerto definido por PORT cuando está desplegada y el puerto 5000 de forma local.
