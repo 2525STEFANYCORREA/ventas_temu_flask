@@ -55,7 +55,7 @@ Por lo tanto existen más de tres tablas relacionadas y se utilizan claves prima
 ## Estructura principal
 
 ```text
-ventas_temu_flask_Semana15_PostgreSQL/
+ventas_temu_flask/
 ├── app.py
 ├── models.py
 ├── requirements.txt
@@ -68,8 +68,19 @@ ventas_temu_flask_Semana15_PostgreSQL/
 ├── sql/
 │   └── esquema.sql
 ├── templates/
-├── static/
-└── docs/
+│   ├── base.html
+│   ├── navbar.html
+│   ├── footer.html
+│   ├── login.html
+│   ├── registro.html
+│   ├── productos.html
+│   ├── clientes.html
+│   ├── proveedores.html
+│   └── facturacion.html
+└── static/
+    ├── style.css
+    ├── script.js
+    └── logo.svg
 ```
 
 ## Ejecutar localmente
