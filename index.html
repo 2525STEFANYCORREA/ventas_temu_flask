@@ -15,7 +15,7 @@
   </div>
 </nav>
 
-<header class="hero-temu py-5">
+<header id="inicio" class="hero-temu py-5">
   <div class="container py-5">
     <div class="row align-items-center g-5">
       <div class="col-lg-7">
@@ -32,6 +32,7 @@
       </div>
       <div class="col-lg-5">
         <div class="hero-card">
+          <img src="static/img/logo.svg" class="img-fluid mb-3" alt="Logo de Ventas Temu">
           <div class="floating-product p1">📱</div>
           <div class="floating-product p2">👗</div>
           <div class="floating-product p3">👜</div>
@@ -44,7 +45,9 @@
   </div>
 </header>
 
+<main>
 <section class="section-space">
+  <div class="container"><div class="row g-4"><article class="col-lg-8">
   <div class="container">
     <div class="section-title text-center">
       <span>FUNCIONALIDADES</span>
@@ -57,6 +60,7 @@
       <div class="col-md-6 col-lg-3"><div class="info-card h-100"><h4>🏢 Proveedores</h4><p>Relación mediante clave foránea con el módulo de productos.</p></div></div>
       <div class="col-md-6 col-lg-3"><div class="info-card h-100"><h4>🧾 Facturación</h4><p>Consulta relacionada entre facturas y clientes mediante JOIN.</p></div></div>
     </div>
+    </article><aside class="col-lg-4"><div class="info-card h-100"><h3>📌 Información del proyecto</h3><p>Proyecto académico de gestión de pedidos y datos comerciales.</p><p class="mb-0"><strong>Backend:</strong> Flask · <strong>BD:</strong> PostgreSQL.</p></div></aside></div>
   </div>
 </section>
 
@@ -69,6 +73,7 @@
     </div>
     <form id="pedidoForm" class="form-card" novalidate>
       <div id="formAlert" class="alert d-none" role="alert"></div>
+      <div id="spinner" class="spinner-border spinner-border-sm d-none" role="status" aria-label="Procesando"></div>
       <div class="row g-3">
         <div class="col-md-6">
           <label class="form-label" for="nombre">Nombre *</label>
@@ -109,6 +114,28 @@
     <div id="registrosContainer" class="row g-3 mt-2"></div>
   </div>
 </section>
+
+<section class="section-space bg-white">
+  <div class="container">
+    <div class="section-title text-center"><span>RECURSO MULTIMEDIA</span><h2>Video relacionado con el proyecto</h2></div>
+    <div class="ratio ratio-16x9 rounded-4 overflow-hidden shadow-sm">
+      <iframe src="https://www.youtube-nocookie.com/embed/URn1Vd4k4rg" title="Video sobre Temu" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<section id="contacto" class="section-space">
+  <div class="container">
+    <div class="section-title text-center"><span>CONTACTO</span><h2>Información de contacto</h2><p>Datos de ejemplo para la actividad académica.</p></div>
+    <div class="row g-4">
+      <article class="col-md-6 col-lg-3"><div class="info-card h-100"><h3>✉️ Correo</h3><a href="mailto:correo@ejemplo.com">correo@ejemplo.com</a></div></article>
+      <article class="col-md-6 col-lg-3"><div class="info-card h-100"><h3>📞 Teléfono</h3><a href="tel:+593000000000">+593 000 000 000</a></div></article>
+      <article class="col-md-6 col-lg-3"><div class="info-card h-100"><h3>📍 Dirección</h3><p class="mb-0">Atención en línea · Ecuador</p></div></article>
+      <article class="col-md-6 col-lg-3"><div class="info-card h-100"><h3>🌐 Redes</h3><a class="d-block" href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook</a><a class="d-block" href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></div></article>
+    </div>
+  </div>
+</section>
+</main>
 
 <footer class="footer-temu mt-5">
   <div class="container py-4 text-center">
