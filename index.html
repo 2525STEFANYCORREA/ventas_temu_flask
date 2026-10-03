@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ventas Temu - pedidos de productos en línea.">
+    <title>Ventas Temu</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark temu-navbar sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#inicio">🛍️ Ventas Temu</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#quienes-somos">Quiénes Somos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main>
+<section id="inicio" class="hero-temu">
+    <div class="container py-5">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-7">
+                <span class="badge hero-badge rounded-pill px-3 py-2 mb-3">Compra fácil y segura</span>
+                <h1 class="display-4 fw-bold">Ventas Temu</h1>
+                <h2 class="h4 fw-semibold">Plataforma para gestionar pedidos y ventas</h2>
+                <h3 class="h6 text-muted mt-2">Desarrollado por Stefany Leonor Correa Ávila</h3>
+                <p class="lead mt-3">Realiza tus pedidos de productos disponibles en Temu de forma sencilla.</p>
+                <a href="#productos" class="btn btn-temu btn-lg rounded-pill px-4">Ver productos</a>
+            </div>
+            <div class="col-lg-5">
+                <div class="hero-card">
+                    <div class="floating-product p1">👗</div>
+                    <div class="floating-product p2">🎧</div>
+                    <div class="floating-product p3">💄</div>
+                    <div class="hero-bag">🛍️</div>
+                    <h3>Tu pedido, fácil y rápido</h3>
+                    <p class="mb-0">Elige tus productos y registra tu solicitud.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="quienes-somos" class="section-space bg-white">
+    <div class="container">
+        <article class="row align-items-center g-5">
+            <div class="col-lg-6">
+                <img class="img-fluid rounded-5 shadow-lg about-image" src="static/img/logo.svg" alt="Logo de Ventas Temu">
+            </div>
+            <div class="col-lg-6">
+                <span class="eyebrow">QUIÉNES SOMOS</span>
+                <h2 class="fw-bold mt-2">Un servicio pensado para facilitar tus compras</h2>
+                <p>
+                    Ventas Temu es un emprendimiento creado para facilitar la compra de productos
+                    disponibles en línea. El sistema organiza la información de productos, clientes,
+                    proveedores y facturación, ofreciendo una interfaz clara y adaptable a diferentes
+                    dispositivos. La propuesta busca brindar una experiencia sencilla para registrar
+                    pedidos y administrar la información del negocio. El proyecto integra HTML5, CSS3,
+                    Bootstrap, JavaScript y posteriormente Flask, Jinja2 y PostgreSQL para gestionar
+                    los datos de manera estructurada. La aplicación también incorpora formularios,
+                    validaciones, autenticación de usuarios y operaciones de creación, consulta,
+                    actualización y eliminación de registros.
+                </p>
+            </div>
+        </article>
+    </div>
+</section>
+
+<section id="productos" class="section-space">
+    <div class="container">
+        <div class="section-title text-center">
+            <span>PRODUCTOS</span>
+            <h2>Algunas categorías</h2>
+            <p>Productos que pueden formar parte de tus pedidos.</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3"><article class="card product-card h-100 border-0"><div class="product-icon">👗</div><div class="card-body"><h5>Moda</h5><p>Prendas y accesorios.</p></div></article></div>
+            <div class="col-md-6 col-lg-3"><article class="card product-card h-100 border-0"><div class="product-icon">🎧</div><div class="card-body"><h5>Tecnología</h5><p>Accesorios tecnológicos.</p></div></article></div>
+            <div class="col-md-6 col-lg-3"><article class="card product-card h-100 border-0"><div class="product-icon">🏠</div><div class="card-body"><h5>Hogar</h5><p>Artículos para el hogar.</p></div></article></div>
+            <div class="col-md-6 col-lg-3"><article class="card product-card h-100 border-0"><div class="product-icon">💄</div><div class="card-body"><h5>Belleza</h5><p>Productos de cuidado personal.</p></div></article></div>
+        </div>
+    </div>
+</section>
+
+<aside class="section-space">
+    <div class="container">
+        <div class="promo-aside">
+            <div>
+                <span class="eyebrow">INFORMACIÓN</span>
+                <h2 class="fw-bold mt-2">Pedidos y atención personalizada</h2>
+                <p class="mb-0">Consulta disponibilidad, registra tu solicitud y recibe atención sobre tu pedido.</p>
+            </div>
+            <a href="#contacto" class="btn btn-dark rounded-pill px-4">Contactar</a>
+        </div>
+    </div>
+</aside>
+
+<section class="section-space bg-dark-temu text-white">
+    <div class="container">
+        <div class="row align-items-center g-4">
+            <div class="col-lg-7">
+                <span class="eyebrow light">VIDEO</span>
+                <h2 class="fw-bold mt-2">Compras en línea</h2>
+                <p>Contenido relacionado con compras y comercio electrónico.</p>
+            </div>
+            <div class="col-lg-5">
+                <div class="ratio ratio-16x9 rounded-4 overflow-hidden shadow">
+                    <iframe src="https://www.youtube.com/embed/6mbwJ2xhgzM" title="Video relacionado con compras en línea" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contacto" class="section-space bg-white">
+    <div class="container">
+        <div class="section-title text-center">
+            <span>CONTACTO</span>
+            <h2>Registra tu solicitud</h2>
+            <p>Completa el formulario para crear un pedido de ejemplo.</p>
+        </div>
+        <div class="row g-5">
+            <div class="col-lg-5">
+                <div class="contact-info">
+                    <div class="contact-item"><span>📧</span><div><strong>Correo</strong><p>stefanycorrea85.com</p></div></div>
+                    <div class="contact-item"><span>📱</span><div><strong>Teléfono</strong><p>095 973 8860</p></div></div>
+                    <div class="contact-item"><span>📍</span><div><strong>Dirección</strong><p>Machala, El Oro, Ecuador</p></div></div>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <form id="pedidoForm" class="form-card" novalidate>
+                    <div id="formAlert" class="alert d-none" role="alert"></div>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label for="nombre" class="form-label">Nombre *</label>
+                            <input type="text" id="nombre" class="form-control" minlength="3">
+                            <div class="invalid-feedback">Escribe un nombre de al menos 3 caracteres.</div>
+                            <div class="valid-feedback">Nombre correcto.</div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="correo" class="form-label">Correo *</label>
+                            <input type="email" id="correo" class="form-control">
+                            <div class="invalid-feedback">Ingresa un correo válido.</div>
+                            <div class="valid-feedback">Correo correcto.</div>
+                        </div>
+                        <div class="col-12">
+                            <label for="descripcion" class="form-label">Descripción *</label>
+                            <textarea id="descripcion" class="form-control" rows="4" minlength="10"></textarea>
+                            <div class="invalid-feedback">La descripción debe tener al menos 10 caracteres.</div>
+                            <div class="valid-feedback">Descripción correcta.</div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="categoria" class="form-label">Categoría *</label>
+                            <select id="categoria" class="form-select">
+                                <option value="">Selecciona una categoría</option>
+                                <option>Moda</option><option>Tecnología</option><option>Hogar</option><option>Belleza</option><option>Otros</option>
+                            </select>
+                            <div class="invalid-feedback">Selecciona una categoría.</div>
+                            <div class="valid-feedback">Categoría seleccionada.</div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="estado" class="form-label">Estado *</label>
+                            <select id="estado" class="form-select">
+                                <option value="">Selecciona el estado</option>
+                                <option>Solicitud de cotización</option><option>Pedido confirmado</option>
+                            </select>
+                            <div class="invalid-feedback">Selecciona un estado.</div>
+                            <div class="valid-feedback">Estado seleccionado.</div>
+                        </div>
+                        <div class="col-12 d-flex gap-2 flex-wrap">
+                            <button type="submit" class="btn btn-temu rounded-pill px-4">Registrar pedido</button>
+                            <button type="reset" class="btn btn-outline-secondary rounded-pill px-4">Limpiar</button>
+                            <span id="spinner" class="spinner-border text-temu d-none" role="status" aria-label="Cargando"></span>
+                        </div>
+                    </div>
+                </form>
+                <div class="records-header mt-4">
+                    <h3 class="fw-bold mb-0">Pedidos registrados</h3>
+                    <span id="totalRegistros" class="record-counter">0 registros</span>
+                </div>
+                <div id="registrosContainer" class="row g-3 mt-2"></div>
+            </div>
+        </div>
+    </div>
+</section>
+</main>
+
+<footer class="footer-temu mt-5">
+    <div class="container py-4">
+        <p class="text-center mb-0">Elaborado por: Stefany Leonor Correa Ávila | Desarrollo de Aplicaciones Web | 2026</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="static/js/script.js"></script>
+</body>
+</html>
