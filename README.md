@@ -156,3 +156,31 @@ Para publicar la vista estática: **Settings → Pages → Deploy from a branch 
 
 **Stefany Leonor Correa Ávila**  
 Desarrollo de Aplicaciones Web — 2026
+
+
+## Checklist final de entrega
+
+- [x] Flask y estructura de proyecto organizada.
+- [x] HTML5, CSS3, Bootstrap y JavaScript conservados para los avances iniciales.
+- [x] Jinja2 con `base.html`, `{% extends %}`, `{% include %}`, variables, `for` e `if/else`.
+- [x] Formularios Flask-WTF con validaciones, GET/POST, `validate_on_submit()` y CSRF.
+- [x] PostgreSQL configurado mediante `conexion/conexion.py`.
+- [x] Cinco tablas: `usuarios`, `proveedores`, `productos`, `clientes` y `facturas`.
+- [x] Claves primarias y claves foráneas.
+- [x] CRUD completo con consultas parametrizadas.
+- [x] JOIN entre productos/proveedores y facturas/clientes.
+- [x] Login, registro, hash de contraseñas, sesión, `@login_required` y logout.
+- [x] `requirements.txt` actualizado.
+- [x] `render.yaml` preparado para Flask + PostgreSQL + Gunicorn.
+- [x] `.env` excluido del repositorio; se conserva `.env.example`.
+- [x] `index.html` raíz preparado como evidencia estática de los avances HTML/CSS/JS.
+
+### Prueba final que debe realizarse antes de entregar
+
+Con PostgreSQL activo, ejecutar:
+
+**Registro → Login → Listar → Agregar → Modificar → Eliminar → JOIN → Cerrar sesión.**
+
+También comprobar que una ruta protegida no sea accesible sin iniciar sesión y que los cambios realizados en PostgreSQL permanezcan después de reiniciar Flask.
+
+> Nota: el código y la estructura del repositorio pueden revisarse desde GitHub, pero la prueba real de PostgreSQL y el funcionamiento público de Render deben comprobarse con la base de datos y el servicio desplegado activos.
