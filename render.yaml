@@ -2,6 +2,7 @@ services:
   - type: web
     name: ventas-temu-flask
     runtime: python
+    plan: free
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn app:app
     envVars:
@@ -16,3 +17,4 @@ databases:
   - name: ventas-temu-postgres
     databaseName: ventas_temu
     user: ventas_temu
+    plan: free
