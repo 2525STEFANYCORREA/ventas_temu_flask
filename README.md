@@ -198,3 +198,28 @@ Realizar en la aplicación publicada:
 ### Entrega
 
 La plataforma debe recibir el **enlace del repositorio GitHub** y el **enlace del video** publicado en YouTube o disponible en el repositorio, según indique el docente.
+
+
+## Entrega final
+
+El proyecto integra los requisitos principales de la evaluación:
+
+- Autenticación y login de usuarios con Flask-Login.
+- Protección de rutas mediante `@login_required`.
+- CRUD completo de productos, proveedores, clientes y facturación.
+- Cinco tablas PostgreSQL con claves primarias y foráneas.
+- Relaciones entre proveedores-productos y clientes-facturas.
+- Formularios Flask-WTF con validación y protección CSRF.
+- Navegación mediante una interfaz común.
+- Archivos estáticos organizados en `static/`.
+- Plantillas reutilizables mediante `base.html`, `navbar.html` y `footer.html`.
+
+### Ejecución local
+
+1. Crear y activar un entorno virtual.
+2. Instalar dependencias con `pip install -r requirements.txt`.
+3. Configurar las variables de conexión PostgreSQL y `SECRET_KEY`.
+4. Ejecutar `python app.py`.
+5. Abrir la dirección local mostrada por Flask.
+
+No se incluyen credenciales reales en el repositorio. Las variables sensibles deben configurarse mediante el entorno.
