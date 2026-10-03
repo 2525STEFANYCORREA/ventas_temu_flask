@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-lg navbar-dark temu-navbar sticky-top">
+<div class="container">
+<a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="{{ url_for('inicio') }}">
+<img src="{{ url_for('static', filename='img/logo.svg') }}" alt="Logo Ventas Temu" width="38" height="38"><span>Ventas Temu</span></a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal"><span class="navbar-toggler-icon"></span></button>
+<div class="collapse navbar-collapse" id="menuPrincipal"><ul class="navbar-nav ms-auto align-items-lg-center">
+<li class="nav-item"><a class="nav-link" href="{{ url_for('inicio') }}">Inicio</a></li>
+{% if current_user.is_authenticated %}
+<li class="nav-item"><a class="nav-link" href="{{ url_for('dashboard') }}">Panel</a></li>
+<li class="nav-item"><a class="nav-link" href="{{ url_for('productos_view') }}">Productos</a></li>
+<li class="nav-item"><a class="nav-link" href="{{ url_for('clientes_view') }}">Clientes</a></li>
+<li class="nav-item"><a class="nav-link" href="{{ url_for('proveedores_view') }}">Proveedores</a></li>
+<li class="nav-item"><a class="nav-link" href="{{ url_for('facturacion_view') }}">Facturación</a></li>
+<li class="nav-item ms-lg-2"><span class="nav-link text-white">👤 {{ current_user.usuario }}</span></li>
+<li class="nav-item ms-lg-2"><a class="btn btn-light btn-sm rounded-pill px-3" href="{{ url_for('logout') }}">Cerrar sesión</a></li>
+{% else %}
+<li class="nav-item"><a class="nav-link" href="{{ url_for('login') }}">Iniciar sesión</a></li>
+<li class="nav-item ms-lg-2"><a class="btn btn-light btn-sm rounded-pill px-3" href="{{ url_for('registro') }}">Registrarse</a></li>
+{% endif %}
+</ul></div></div></nav>
