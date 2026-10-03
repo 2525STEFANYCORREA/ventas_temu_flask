@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ventas Temu | Proyecto Integrador</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark temu-navbar">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">🛍️ Ventas Temu</a>
+    <a class="btn btn-light btn-sm rounded-pill" href="templates/index.html">Código de plantilla</a>
+  </div>
+</nav>
+
+<header class="hero-temu py-5">
+  <div class="container py-5">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-7">
+        <span class="eyebrow">PROYECTO INTEGRADOR</span>
+        <h1 class="display-3 fw-bold mt-2">Ventas Temu</h1>
+        <p class="lead">Aplicación web para gestionar productos, clientes, proveedores y facturación con Flask y PostgreSQL.</p>
+        <div class="d-flex flex-wrap gap-2">
+          <span class="pill-soft">Flask</span>
+          <span class="pill-soft">PostgreSQL</span>
+          <span class="pill-soft">Flask-WTF</span>
+          <span class="pill-soft">Flask-Login</span>
+          <span class="pill-soft">Bootstrap</span>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <div class="hero-card">
+          <div class="floating-product p1">📱</div>
+          <div class="floating-product p2">👗</div>
+          <div class="floating-product p3">👜</div>
+          <div class="hero-bag">🛍️</div>
+          <h3 class="fw-bold">CRUD + Login + PostgreSQL</h3>
+          <p class="mb-0 text-muted">Vista estática para GitHub Pages.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="section-space">
+  <div class="container">
+    <div class="section-title text-center">
+      <span>FUNCIONALIDADES</span>
+      <h2>Gestión completa del proyecto</h2>
+      <p>La versión Flask contiene los módulos solicitados y esta página permite mostrar el proyecto de forma estática.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3"><div class="info-card h-100"><h4>📦 Productos</h4><p>Listar, registrar, modificar y eliminar registros con PostgreSQL.</p></div></div>
+      <div class="col-md-6 col-lg-3"><div class="info-card h-100"><h4>👥 Clientes</h4><p>Formulario Flask-WTF y operaciones de gestión de datos.</p></div></div>
+      <div class="col-md-6 col-lg-3"><div class="info-card h-100"><h4>🏢 Proveedores</h4><p>Relación mediante clave foránea con el módulo de productos.</p></div></div>
+      <div class="col-md-6 col-lg-3"><div class="info-card h-100"><h4>🧾 Facturación</h4><p>Consulta relacionada entre facturas y clientes mediante JOIN.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-space bg-white">
+  <div class="container">
+    <div class="section-title text-center">
+      <span>FORMULARIO</span>
+      <h2>Validación dinámica</h2>
+      <p>Ejemplo de la interfaz frontend solicitada en los avances anteriores.</p>
+    </div>
+    <form id="pedidoForm" class="form-card" novalidate>
+      <div id="formAlert" class="alert d-none" role="alert"></div>
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label class="form-label" for="nombre">Nombre *</label>
+          <input id="nombre" class="form-control" minlength="3" required>
+          <div class="invalid-feedback">Escribe al menos 3 caracteres.</div>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label" for="correo">Correo *</label>
+          <input id="correo" type="email" class="form-control" required>
+          <div class="invalid-feedback">Ingresa un correo válido.</div>
+        </div>
+        <div class="col-12">
+          <label class="form-label" for="descripcion">Descripción *</label>
+          <textarea id="descripcion" class="form-control" minlength="10" required></textarea>
+          <div class="invalid-feedback">Escribe al menos 10 caracteres.</div>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label" for="categoria">Categoría *</label>
+          <select id="categoria" class="form-select" required>
+            <option value="">Selecciona</option><option>Moda</option><option>Tecnología</option><option>Hogar</option><option>Belleza</option>
+          </select>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label" for="estado">Estado *</label>
+          <select id="estado" class="form-select" required>
+            <option value="">Selecciona</option><option>Solicitud de cotización</option><option>Pedido confirmado</option>
+          </select>
+        </div>
+        <div class="col-12">
+          <button class="btn btn-temu rounded-pill px-4" type="submit">Registrar pedido</button>
+        </div>
+      </div>
+    </form>
+    <div class="records-header mt-5">
+      <h3 class="fw-bold mb-0">Registros</h3>
+      <span id="totalRegistros" class="record-counter">0 registros</span>
+    </div>
+    <div id="registrosContainer" class="row g-3 mt-2"></div>
+  </div>
+</section>
+
+<footer class="footer-temu mt-5">
+  <div class="container py-4 text-center">
+    <p class="mb-1">Ventas Temu — Proyecto Integrador 2026</p>
+    <p class="small mb-0">La aplicación Flask completa se ejecuta con PostgreSQL; esta página es su vista estática para GitHub Pages.</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="static/js/script.js"></script>
+</body>
+</html>
