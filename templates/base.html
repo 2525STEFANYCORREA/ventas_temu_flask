@@ -10,7 +10,7 @@
 </head>
 <body>
 
-{% include "navbar.html" %}
+{% include "components/navbar.html" %}
 
 <main>
     {% with messages = get_flashed_messages(with_categories=true) %}
@@ -29,7 +29,7 @@
     {% block content %}{% endblock %}
 </main>
 
-{% include "footer.html" %}
+{% include "components/footer.html" %}
 
 <div class="modal fade" id="infoModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
