@@ -1,9 +1,7 @@
 import os
-from decimal import Decimal
 from flask import Flask, flash, redirect, render_template, url_for
 from flask_login import LoginManager, current_user, login_required, login_user, logout_user
 from werkzeug.security import check_password_hash, generate_password_hash
-from psycopg2 import Error
 
 from forms import ClienteForm, FacturacionForm, LoginForm, ProductoForm, ProveedorForm, UsuarioForm
 from forms.producto_form import DeleteForm
@@ -417,4 +415,4 @@ def estado_postgresql():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)), debug=True)
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)), debug=os.environ.get("FLASK_DEBUG", "0") == "1")
